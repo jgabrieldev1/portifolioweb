@@ -1,0 +1,22 @@
+.section{
+    max-width:var(--container);
+    margin:auto;
+    padding:110px 24px;
+}
+
+.section-label{
+    color:var(--secondary);
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.section h2{
+    margin:20px 0;
+    font-size:clamp(2rem,4vw,3rem);
+}
+
+.section p{
+    color:var(--gray);
+    line-height:1.8;
+    max-width:760px;
+}

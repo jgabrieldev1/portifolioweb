@@ -1,0 +1,27 @@
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 32px;
+    border-radius:50px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.primary{
+    background:var(--primary);
+}
+
+.secondary{
+    border:1px solid #ffffff33;
+}
+
+.primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 35px rgba(37,99,235,.35);
+}
+
+.secondary:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,.06);
+}

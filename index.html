@@ -1,544 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>João Gabriel — Desenvolvedor Web</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>João Gabriel Sales | Desenvolvedor Web</title>
 
-    :root {
-      --bg:        #0A0A0F;
-      --bg2:       #111118;
-      --surface:   #1A1A24;
-      --border:    #252532;
-      --accent:    #3B82F6;
-      --accent2:   #60A5FA;
-      --text:      #F0F0F0;
-      --muted:     #9CA3AF;
-      --dimmed:    #4B5563;
-      --radius:    10px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(10,10,15,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 120px 40px 80px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .hero-tag {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.6rem, 6vw, 4.4rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      margin-bottom: 28px;
-    }
-    .hero h1 .cursor {
-      display: inline-block;
-      width: 3px;
-      height: 0.85em;
-      background: var(--accent);
-      margin-left: 4px;
-      vertical-align: middle;
-      animation: blink 1.1s step-end infinite;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 44px;
-      line-height: 1.7;
-    }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      border-radius: var(--radius);
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-      border: none;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* ── SECTION ── */
-    section {
-      padding: 96px 40px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      color: var(--text);
-      margin-bottom: 16px;
-    }
-    .section-desc {
-      color: var(--muted);
-      max-width: 480px;
-      margin-bottom: 56px;
-      line-height: 1.7;
-    }
-
-    /* ── SOBRE ── */
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-    .sobre-text p { color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
-    .sobre-text p:last-child { margin-bottom: 0; }
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .skill-tag {
-      padding: 6px 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--muted);
-    }
-
-    /* ── PROJETOS ── */
-    .projetos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .card:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .card-thumb {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: var(--bg2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
-    }
-    .card-body { padding: 20px; }
-    .card-meta {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .card h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
-    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-    .card-tag {
-      font-size: 0.72rem;
-      font-weight: 500;
-      padding: 3px 8px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--dimmed);
-    }
-
-    /* ── CONTATO ── */
-    #contato { border-top: 1px solid var(--border); }
-    .contato-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-    .contato-info p { color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
-    .contato-links { display: flex; flex-direction: column; gap: 12px; }
-    .contato-link {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    .contato-link:hover { color: var(--accent); }
-    .contato-link .icon {
-      width: 36px; height: 36px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-    }
-    .form-field { margin-bottom: 16px; }
-    .form-field label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-    .form-field input,
-    .form-field textarea {
-      width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      transition: border-color 0.2s;
-      outline: none;
-      resize: vertical;
-    }
-    .form-field input:focus,
-    .form-field textarea:focus { border-color: var(--accent); }
-    .form-field textarea { min-height: 120px; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 900px;
-      margin: 0 auto;
-      font-size: 0.82rem;
-      color: var(--dimmed);
-    }
-
-    /* ── DIVIDER ── */
-    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-
-    /* ── MOBILE ── */
-    @media (max-width: 640px) {
-      nav { padding: 16px 24px; }
-      .nav-links { display: none; }
-      .hero, section { padding-left: 24px; padding-right: 24px; }
-      .sobre-grid, .contato-grid { grid-template-columns: 1fr; gap: 32px; }
-      footer { flex-direction: column; gap: 8px; text-align: center; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .cursor { animation: none; opacity: 1; }
-      .card { transition: none; }
-      .card:hover { transform: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="#">JG<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
+  <div class="scroll-progress"></div>
+  <div class="cursor-glow"></div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <span class="hero-tag">Desenvolvedor Web · Freelancer</span>
-    <h1>Criando sites<br>que vendem<span class="cursor"></span></h1>
-    <p class="hero-sub">
-      Desenvolvimento web focado em resultado. Sites rápidos, bonitos e que funcionam — do portfólio à loja virtual.
-    </p>
-    <div class="hero-actions">
-      <a href="#projetos" class="btn btn-primary">Ver projetos →</a>
-      <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
-    </div>
-  </div>
+  <header class="header">
+    <nav class="navbar">
+      <a href="#" class="logo">JGS<span>.</span></a>
 
-  <hr class="divider" />
+      <ul class="nav-menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- SOBRE -->
-  <section id="sobre">
-    <p class="section-label">Quem sou</p>
-    <h2 class="section-title">Desenvolvedor,<br>não só codador</h2>
-    <div class="sobre-grid">
-      <div class="sobre-text">
-        <p>
-          Sou João Gabriel, desenvolvedor web freelancer de Cuiabá (MT). Crio sites e landing pages com foco em clareza visual, velocidade de carregamento e conversão de visitantes em clientes.
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="tag reveal-item">Desenvolvedor Web</span>
+
+        <h1 class="reveal-item delay-1">Desenvolvendo experiências digitais que fazem empresas venderem mais.</h1>
+
+        <p class="reveal-item delay-2">
+          Criação de landing pages, sites institucionais e portfólios profissionais com design moderno,
+          responsivo e foco em conversão.
         </p>
-        <p>
-          Trabalho com HTML, CSS, JavaScript e WordPress — entrego desde páginas institucionais até lojas virtuais. Cada projeto é construído do zero, pensando no cliente final do meu cliente.
-        </p>
-      </div>
-      <div>
-        <p style="font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--dimmed);margin-bottom:16px;">Ferramentas &amp; tecnologias</p>
-        <div class="skills-list">
-          <span class="skill-tag">HTML / CSS</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">WordPress</span>
-          <span class="skill-tag">Elementor</span>
-          <span class="skill-tag">WooCommerce</span>
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">SEO básico</span>
-          <span class="skill-tag">Google Analytics</span>
+
+        <div class="hero-buttons reveal-item delay-3">
+          <a href="#contato" class="btn primary">Solicitar orçamento</a>
+          <a href="#projetos" class="btn secondary">Ver projetos</a>
+        </div>
+
+        <div class="tech-stack reveal-item delay-4">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>WordPress</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <hr class="divider" />
+      <div class="hero-visual reveal-item delay-3">
+        <div class="mockup">
+          <div class="mockup-top">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-  <!-- PROJETOS -->
-  <section id="projetos">
-    <p class="section-label">Portfólio</p>
-    <h2 class="section-title">Projetos</h2>
-    <p class="section-desc">Sites desenvolvidos para clientes reais e projetos de demonstração.</p>
+          <div class="mockup-screen">
+            <div class="mockup-line large"></div>
+            <div class="mockup-line medium"></div>
+            <div class="mockup-line small"></div>
 
-    <div class="projetos-grid">
-
-      <!-- Projeto 1 -->
-      <a class="card" href="#" target="_blank" rel="noopener">
-        <div class="card-thumb">🛍️</div>
-        <div class="card-body">
-          <p class="card-meta">E-commerce</p>
-          <h3>Loja Conceito — Moda</h3>
-          <p>Site de vendas com catálogo, carrinho e integração de pagamento. Layout mobile-first com foco em conversão.</p>
-          <div class="card-tags">
-            <span class="card-tag">WordPress</span>
-            <span class="card-tag">WooCommerce</span>
-            <span class="card-tag">Elementor</span>
+            <div class="mockup-card">
+              <div class="mockup-line large"></div>
+              <div class="mockup-line medium"></div>
+            </div>
           </div>
         </div>
-      </a>
-
-      <!-- Projeto 2 -->
-      <a class="card" href="#" target="_blank" rel="noopener">
-        <div class="card-thumb">🏢</div>
-        <div class="card-body">
-          <p class="card-meta">Institucional</p>
-          <h3>Site Institucional — Escritório</h3>
-          <p>Página institucional para escritório de advocacia, com formulário de contato e SEO local configurado.</p>
-          <div class="card-tags">
-            <span class="card-tag">HTML/CSS</span>
-            <span class="card-tag">JavaScript</span>
-            <span class="card-tag">SEO</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Projeto 3 -->
-      <a class="card" href="#" target="_blank" rel="noopener">
-        <div class="card-thumb">📣</div>
-        <div class="card-body">
-          <p class="card-meta">Landing Page</p>
-          <h3>Landing Page — Curso Online</h3>
-          <p>Página de captura de alta conversão para lançamento de curso, com depoimentos e CTA otimizado.</p>
-          <div class="card-tags">
-            <span class="card-tag">HTML/CSS</span>
-            <span class="card-tag">JavaScript</span>
-            <span class="card-tag">Netlify</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- CONTATO -->
-  <section id="contato">
-    <p class="section-label">Vamos trabalhar</p>
-    <h2 class="section-title">Entre em contato</h2>
-    <div class="contato-grid">
-
-      <div class="contato-info">
-        <p>Tem um projeto em mente? Me conta o que você precisa — respondo em até 24 horas com uma proposta clara e sem enrolação.</p>
-        <div class="contato-links">
-          <a class="contato-link" href="mailto:joao.salesti@gmail.com">
-            <span class="icon">✉️</span>
-            joao.salesti@gmail.com
-          </a>
-          <a class="contato-link" href="https://wa.me/5565981186509" target="_blank" rel="noopener">
-            <span class="icon">💬</span>
-            WhatsApp (65) 9 8118-6509
-          </a>
-          <a class="contato-link" href="https://www.linkedin.com/in/jgabrieldev1/" target="_blank" rel="noopener">
-            <span class="icon">🔗</span>
-            linkedin.com/in/jgabrieldev1
-          </a>
-          <a class="contato-link" href="https://github.com/jgabrieldev1" target="_blank" rel="noopener">
-            <span class="icon">⌨️</span>
-            github.com/jgabrieldev1
-          </a>
-        </div>
       </div>
+    </section>
 
-      <div>
-        <div class="form-field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" placeholder="Seu nome" />
-        </div>
-        <div class="form-field">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="seu@email.com" />
-        </div>
-        <div class="form-field">
-          <label for="msg">Mensagem</label>
-          <textarea id="msg" placeholder="Conte sobre o seu projeto..."></textarea>
-        </div>
-        <button class="btn btn-primary" onclick="enviarFormulario()" style="width:100%;justify-content:center;">Enviar mensagem →</button>
+    <section id="sobre" class="section">
+      <span class="section-label reveal-item">Sobre mim</span>
+      <h2 class="reveal-item delay-1">Transformo ideias em sites claros, bonitos e funcionais.</h2>
+      <p class="reveal-item delay-2">
+        Meu foco é ajudar pequenos negócios, profissionais autônomos e empresas locais a terem uma presença digital mais profissional.
+      </p>
+    </section>
+
+    <section id="servicos" class="section">
+      <span class="section-label reveal-item">Serviços</span>
+      <h2 class="reveal-item delay-1">O que eu posso criar para você</h2>
+
+      <div class="cards">
+        <article class="card reveal-item delay-1">
+          <h3>Landing Pages</h3>
+          <p>Páginas focadas em apresentar uma oferta, serviço ou campanha.</p>
+        </article>
+
+        <article class="card reveal-item delay-2">
+          <h3>Sites Institucionais</h3>
+          <p>Sites completos para empresas que precisam transmitir confiança.</p>
+        </article>
+
+        <article class="card reveal-item delay-3">
+          <h3>Portfólios</h3>
+          <p>Páginas profissionais para apresentar trabalhos, serviços e contatos.</p>
+        </article>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="processo" class="section">
+      <span class="section-label reveal-item">Processo</span>
+      <h2 class="reveal-item delay-1">Como funciona o desenvolvimento do seu site</h2>
+      <p class="reveal-item delay-2">
+        Um processo simples, claro e organizado para transformar sua ideia em uma presença digital profissional.
+      </p>
 
-  <!-- FOOTER -->
-  <footer>
-    <span>© 2025 João Gabriel</span>
-    <span>Feito com HTML puro — sem template</span>
-  </footer>
+      <div class="process-grid">
+        <article class="process-card reveal-item delay-1">
+          <span>01</span>
+          <h3>Entendimento</h3>
+          <p>Conversamos sobre seu negócio, objetivo, público e o tipo de site ideal para você.</p>
+        </article>
 
-  <script>
-    // Scroll suave nos links do nav
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href');
-        if (id === '#') return;
-        e.preventDefault();
-        document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
+        <article class="process-card reveal-item delay-2">
+          <span>02</span>
+          <h3>Planejamento</h3>
+          <p>Definimos estrutura, seções, textos, identidade visual e principais chamadas para ação.</p>
+        </article>
 
-    // Formulário: abre WhatsApp ou mailto (sem backend)
-    function enviarFormulario() {
-      const nome = document.getElementById('nome').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const msg = document.getElementById('msg').value.trim();
-      if (!nome || !msg) { alert('Preencha pelo menos o nome e a mensagem.'); return; }
-      const texto = encodeURIComponent(`Olá! Sou ${nome} (${email || 'sem email informado'}).\n\n${msg}`);
-      window.open(`https://wa.me/5565981186509?text=${texto}`, '_blank');
-    }
+        <article class="process-card reveal-item delay-3">
+          <span>03</span>
+          <h3>Desenvolvimento</h3>
+          <p>Construo o site com foco em responsividade, velocidade, estética e boa experiência de uso.</p>
+        </article>
 
-    // Fade-in suave nas seções ao rolar
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
+        <article class="process-card reveal-item delay-4">
+          <span>04</span>
+          <h3>Publicação</h3>
+          <p>Após os ajustes finais, o site é publicado e fica pronto para receber visitantes e contatos.</p>
+        </article>
+      </div>
+    </section>
 
-    document.querySelectorAll('.card, .sobre-grid, .contato-grid').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      obs.observe(el);
-    });
-  </script>
+    <section id="projetos" class="section">
+      <span class="section-label reveal-item">Projetos</span>
+      <h2 class="reveal-item delay-1">Meus primeiros projetos</h2>
+      <p class="reveal-item delay-2">
+        Modelos criados para demonstrar como posso ajudar diferentes tipos de negócios a terem presença digital profissional.
+      </p>
 
+      <div class="project-grid">
+        <article class="project-card reveal-item delay-1">
+          <span>Clínica Odontológica</span>
+          <h3>Site institucional para clínicas e consultórios</h3>
+          <p>Apresentação de serviços, profissionais, localização e botão direto para agendamento.</p>
+          <a href="#">Ver projeto</a>
+        </article>
+
+        <article class="project-card reveal-item delay-2">
+          <span>Escritório de Advocacia</span>
+          <h3>Site profissional para advogados</h3>
+          <p>Layout sóbrio, confiável e focado em autoridade profissional e contato rápido.</p>
+          <a href="#">Ver projeto</a>
+        </article>
+
+        <article class="project-card reveal-item delay-3">
+          <span>Imobiliária</span>
+          <h3>Página para captação de contatos</h3>
+          <p>Estrutura focada em imóveis, formulário de interesse e geração de leads.</p>
+          <a href="#">Ver projeto</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <span class="section-label reveal-item">Contato</span>
+      <h2 class="reveal-item delay-1">Vamos construir seu site?</h2>
+      <p class="reveal-item delay-2">
+        Entre em contato e vamos conversar sobre a melhor solução para o seu projeto.
+      </p>
+
+      <a href="https://wa.me/55SEUNUMERO" class="btn primary reveal-item delay-3" target="_blank">
+        Chamar no WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animation.js"></script>
 </body>
 </html>

@@ -1,0 +1,130 @@
+.cards{
+    margin-top:56px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.card{
+    background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+    padding:34px;
+    border-radius:var(--radius);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(56,189,248,.35);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+.project-grid{
+    margin-top:56px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.project-card{
+    min-height:340px;
+    padding:34px;
+    border-radius:24px;
+    background:
+        linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03)),
+        radial-gradient(circle at top right,rgba(56,189,248,.18),transparent 45%);
+    border:1px solid rgba(255,255,255,.10);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.35s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(56,189,248,.45);
+    box-shadow:0 24px 70px rgba(0,0,0,.30);
+}
+
+.project-card span{
+    color:var(--secondary);
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.project-card h3{
+    font-size:1.45rem;
+    line-height:1.3;
+    margin:24px 0 14px;
+}
+
+.project-card p{
+    color:var(--gray);
+    line-height:1.7;
+}
+
+.project-card a{
+    margin-top:28px;
+    color:var(--secondary);
+    font-weight:700;
+}
+.card,
+.project-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before,
+.project-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(56,189,248,.18), transparent 35%);
+    opacity:0;
+    transition:.35s;
+    pointer-events:none;
+}
+
+.card:hover::before,
+.project-card:hover::before{
+    opacity:1;
+}
+.process-grid{
+    margin-top:56px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.process-card{
+    position:relative;
+    overflow:hidden;
+    padding:30px;
+    border-radius:24px;
+    background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
+}
+
+.process-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(56,189,248,.35);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.process-card span{
+    display:inline-flex;
+    margin-bottom:24px;
+    color:var(--secondary);
+    font-size:1.8rem;
+    font-weight:800;
+}
+
+.process-card h3{
+    margin-bottom:14px;
+}
+
+.process-card p{
+    color:var(--gray);
+    line-height:1.7;
+}

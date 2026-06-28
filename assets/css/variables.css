@@ -1,0 +1,29 @@
+:root{
+
+    /* Cores */
+
+    --primary:#2563EB;
+    --secondary:#38BDF8;
+    --accent:#8B5CF6;
+
+    --background:#0F172A;
+    --background-light:#1E293B;
+
+    --white:#FFFFFF;
+    --gray:#CBD5E1;
+    --dark:#020617;
+
+    /* Tipografia */
+
+    --title:3.8rem;
+    --subtitle:2.2rem;
+    --text:1.05rem;
+
+    /* Espaçamentos */
+
+    --container:1200px;
+
+    --radius:16px;
+
+    --transition:.35s;
+}

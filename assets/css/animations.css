@@ -1,0 +1,82 @@
+/* =======================================================
+   SCROLL REVEAL
+======================================================= */
+
+.reveal-item{
+
+    opacity:0;
+
+    transform:translateY(35px) scale(.985);
+
+    filter:blur(3px);
+
+    transition:
+        opacity .35s ease-out,
+        transform .45s cubic-bezier(.22,1,.36,1),
+        filter .20s ease-out;
+
+    will-change:transform,opacity,filter;
+
+}
+
+/* Quando entra na tela */
+
+.reveal-item.active{
+
+    opacity:1;
+
+    transform:translateY(0) scale(1);
+
+    filter:blur(0);
+
+}
+
+/* Pequenos delays */
+
+.reveal-item.delay-1{
+
+    transition-delay:.04s;
+
+}
+
+.reveal-item.delay-2{
+
+    transition-delay:.08s;
+
+}
+
+.reveal-item.delay-3{
+
+    transition-delay:.12s;
+
+}
+
+.reveal-item.delay-4{
+
+    transition-delay:.16s;
+
+}
+
+.reveal-item.delay-5{
+
+    transition-delay:.20s;
+
+}
+
+/* Respeita usuários que preferem menos animações */
+
+@media (prefers-reduced-motion: reduce){
+
+    .reveal-item{
+
+        opacity:1;
+
+        transform:none;
+
+        filter:none;
+
+        transition:none;
+
+    }
+
+}
