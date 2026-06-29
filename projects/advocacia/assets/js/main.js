@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     element.innerHTML = words
       .map((word, index) => {
-        return `<span style="transition-delay:${index * 0.018}s">${word}&nbsp;</span>`;
+        return `<span style="transition-delay:${index * 0.018}s">${word} </span>`;
       })
       .join("");
 
