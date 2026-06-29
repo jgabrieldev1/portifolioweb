@@ -1,3 +1,7 @@
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -14,6 +18,16 @@ body{
     color:#fff;
     overflow-x:hidden;
 }
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
 
 body::before{
     content:"";
@@ -38,10 +52,10 @@ body::after{
     z-index:-4;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+
+/* =========================
+   HEADER
+========================= */
 
 .header{
     position:fixed;
@@ -56,8 +70,8 @@ a{
 
 .navbar{
     width:min(1180px,92%);
-    margin:auto;
     height:72px;
+    margin:auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -85,6 +99,11 @@ a{
     color:#d4af37;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
     position:relative;
     min-height:100vh;
@@ -95,6 +114,7 @@ a{
     grid-template-columns:1.05fr .95fr;
     align-items:center;
     gap:46px;
+    overflow:hidden;
 }
 
 .hero-content{
@@ -112,10 +132,10 @@ a{
 }
 
 .hero h1{
-    font-size:clamp(1.9rem,3.15vw,3.05rem);
-    line-height:1.18;
+    font-size:clamp(1.8rem,2.8vw,2.75rem);
+    line-height:1.2;
     margin-bottom:20px;
-    max-width:600px;
+    max-width:560px;
 }
 
 .hero p{
@@ -131,6 +151,11 @@ a{
     margin-top:28px;
     flex-wrap:wrap;
 }
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn{
     display:inline-flex;
@@ -163,6 +188,11 @@ a{
     background:#d4af37;
     color:#111;
 }
+
+
+/* =========================
+   HERO STATS
+========================= */
 
 .hero-stats{
     margin-top:32px;
@@ -197,6 +227,11 @@ a{
     font-size:.75rem;
     line-height:1.35;
 }
+
+
+/* =========================
+   LAWYER CARD
+========================= */
 
 .hero-image{
     display:flex;
@@ -263,6 +298,11 @@ a{
     }
 }
 
+
+/* =========================
+   SECTIONS
+========================= */
+
 .section{
     width:min(1180px,92%);
     margin:auto;
@@ -291,11 +331,17 @@ a{
     max-width:720px;
 }
 
+
+/* =========================
+   CARDS
+========================= */
+
 .cards{
     margin-top:40px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
+    overflow:hidden;
 }
 
 .card{
@@ -345,14 +391,30 @@ a{
     font-size:.94rem;
 }
 
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact{
     text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:70vh;
     padding:95px 0;
 }
 
 .contact p{
     margin:0 auto 28px;
+    max-width:620px;
 }
+
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
     border-top:1px solid rgba(255,255,255,.08);
@@ -361,6 +423,11 @@ a{
     color:#888;
     font-size:.88rem;
 }
+
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
 
 .reveal{
     opacity:0;
@@ -378,9 +445,18 @@ a{
     filter:blur(0);
 }
 
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:950px){
     .navbar{
         height:66px;
+    }
+
+    .menu{
+        display:none;
     }
 
     .hero{
@@ -405,10 +481,6 @@ a{
         grid-template-columns:1fr;
     }
 
-    .menu{
-        display:none;
-    }
-
     .buttons{
         flex-direction:column;
     }
@@ -420,86 +492,4 @@ a{
     .section{
         padding:75px 0;
     }
-}
-.split-text{
-    display:block;
-    overflow:hidden;
-}
-
-.split-text span{
-    display:inline-block;
-    opacity:0;
-    transform:translateY(32px);
-    filter:blur(3px);
-    transition:
-        opacity .32s ease-out,
-        transform .42s cubic-bezier(.22,1,.36,1),
-        filter .18s ease-out;
-}
-
-.split-text.active span{
-    opacity:1;
-    transform:translateY(0);
-    filter:blur(0);
-}
-
-.contact{
-    text-align:center;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    min-height:70vh;
-}
-
-.contact .split-text{
-    text-align:center;
-}
-
-.contact p{
-    margin:0 auto 28px;
-    max-width:620px;
-}
-.split-text{
-    display:block;
-    overflow:visible;
-    max-width:100%;
-}
-
-.split-text span{
-    display:inline-block;
-    white-space:normal;
-}
-
-.hero h1{
-    max-width:560px;
-    overflow-wrap:normal;
-}
-
-.hero{
-    overflow:hidden;
-}
-
-.cards{
-    overflow:hidden;
-}
-.split-text{
-    display:block;
-    overflow:visible;
-    max-width:100%;
-}
-
-.split-text span{
-    display:inline-block;
-    white-space:normal;
-}
-
-.hero{
-    overflow:hidden;
-}
-
-.hero h1{
-    font-size:clamp(1.8rem,2.8vw,2.75rem);
-    line-height:1.2;
-    max-width:560px;
 }
