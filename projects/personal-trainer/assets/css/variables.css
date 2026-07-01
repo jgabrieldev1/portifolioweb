@@ -1,0 +1,17 @@
+:root{
+    --bg:#080A0C;
+    --bg-soft:#11161C;
+    --card:#151B22;
+
+    --primary:#D7FF3F;
+    --primary-dark:#A7C92E;
+
+    --white:#FFFFFF;
+    --gray:#B6BEC8;
+    --muted:#7D8793;
+
+    --container:1180px;
+    --radius:24px;
+
+    --transition:.35s;
+}

@@ -1,0 +1,30 @@
+@media(max-width:950px){
+    .about-section{
+        grid-template-columns:1fr;
+    }
+
+    .image-placeholder{
+        min-height:380px;
+    }
+
+    .method-grid{
+        grid-template-columns:1fr;
+    }
+
+    .benefits-bar{
+        grid-template-columns:1fr;
+        transform:none;
+        margin-top:30px;
+    }
+}
+@media(max-width:950px){
+    .pricing-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta-section{
+        grid-template-columns:1fr;
+        padding:34px;
+        margin:56px auto;
+    }
+}

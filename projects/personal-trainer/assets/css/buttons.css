@@ -1,0 +1,43 @@
+.header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+    background:rgba(8,10,12,.82);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.navbar{
+    width:min(var(--container),92%);
+    height:74px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:1.35rem;
+    font-weight:900;
+}
+
+.logo span{
+    color:var(--primary);
+}
+
+.menu{
+    display:flex;
+    gap:30px;
+}
+
+.menu a{
+    color:var(--gray);
+    font-size:.95rem;
+    transition:var(--transition);
+}
+
+.menu a:hover{
+    color:var(--primary);
+}

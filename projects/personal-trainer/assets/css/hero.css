@@ -1,0 +1,131 @@
+.hero{
+    min-height:auto;
+    width:min(var(--container),92%);
+    margin:auto;
+    padding-top:115px;
+    padding-bottom:70px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hero-content{
+    max-width:620px;
+}
+
+.hero-label{
+    display:inline-block;
+    color:var(--primary);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.78rem;
+    font-weight:900;
+    margin-bottom:16px;
+}
+
+.hero h1{
+    font-size:clamp(2rem,3.2vw,3.1rem);
+    line-height:1.12;
+}
+
+.hero p{
+    color:var(--gray);
+    font-size:clamp(.98rem,1.2vw,1.1rem);
+    line-height:1.8;
+    max-width:580px;
+}
+
+.buttons{
+    display:flex;
+    gap:16px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.hero-stats{
+    margin-top:34px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.hero-stats div{
+    padding:16px;
+    border-radius:18px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.hero-stats strong{
+    display:block;
+    color:var(--primary);
+    font-size:1.25rem;
+    margin-bottom:5px;
+}
+
+.hero-stats span{
+    color:var(--gray);
+    font-size:.78rem;
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
+
+.trainer-card{
+    width:100%;
+    max-width:340px;
+    padding:16px;
+    border-radius:32px;
+    background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.025));
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 35px 90px rgba(0,0,0,.4);
+    animation:floatTrainer 5s ease-in-out infinite;
+}
+
+.trainer-photo{
+    min-height:340px;
+    border-radius:26px;
+    background:
+        linear-gradient(180deg,rgba(215,255,63,.16),rgba(8,10,12,.96)),
+        radial-gradient(circle at top,rgba(215,255,63,.28),transparent 55%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(215,255,63,.18);
+}
+
+.trainer-photo span{
+    color:var(--primary);
+    font-weight:800;
+}
+
+.trainer-info{
+    margin-top:14px;
+    padding:16px;
+    border-radius:20px;
+    background:var(--bg-soft);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.trainer-info strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.trainer-info span{
+    color:var(--primary);
+    font-size:.85rem;
+}
+
+@keyframes floatTrainer{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-14px);
+    }
+}

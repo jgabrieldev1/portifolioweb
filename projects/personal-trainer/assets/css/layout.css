@@ -1,0 +1,23 @@
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 80% 10%, rgba(215,255,63,.12), transparent 28%),
+        radial-gradient(circle at 15% 80%, rgba(255,255,255,.04), transparent 25%);
+    pointer-events:none;
+    z-index:-3;
+}
+
+.section{
+    width:min(var(--container),92%);
+    margin:auto;
+    padding:72px 0;
+}

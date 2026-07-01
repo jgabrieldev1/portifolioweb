@@ -1,0 +1,120 @@
+.about-section{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    display:flex;
+    justify-content:center;
+}
+
+.image-placeholder{
+    width:100%;
+    max-width:460px;
+    height:580px;
+    border-radius:32px;
+    border:2px dashed rgba(255,255,255,.12);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--gray);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.02)
+        );
+
+    overflow:hidden;
+}
+
+.about-content h2{
+    margin:18px 0 26px;
+    font-size:clamp(2rem,3vw,3rem);
+    line-height:1.15;
+}
+
+.about-content p{
+    margin-bottom:22px;
+}
+
+.about-points{
+    margin-top:35px;
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.about-points span{
+
+    padding:14px 22px;
+
+    border-radius:999px;
+
+    background:rgba(215,255,63,.10);
+
+    color:var(--primary);
+
+    border:1px solid rgba(215,255,63,.25);
+
+    font-weight:700;
+}
+.about-section{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+}
+
+.image-placeholder{
+    width:100%;
+    min-height:560px;
+    border-radius:34px;
+    background:
+        linear-gradient(180deg,rgba(215,255,63,.16),rgba(8,10,12,.92)),
+        radial-gradient(circle at top,rgba(215,255,63,.28),transparent 55%);
+    border:1px solid rgba(215,255,63,.18);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--primary);
+    font-weight:900;
+    box-shadow:0 35px 90px rgba(0,0,0,.38);
+}
+
+.about-content h2{
+    margin:18px 0 26px;
+    font-size:clamp(2rem,3vw,3rem);
+    line-height:1.12;
+}
+
+.about-content p{
+    margin-bottom:20px;
+}
+
+.about-points{
+    margin-top:34px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.about-points span{
+    padding:12px 18px;
+    border-radius:999px;
+    background:rgba(215,255,63,.10);
+    color:var(--primary);
+    border:1px solid rgba(215,255,63,.25);
+    font-weight:800;
+    font-size:.9rem;
+}

@@ -1,0 +1,44 @@
+.benefits-bar{
+    width:min(var(--container),92%);
+    margin:32px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.benefits-bar div{
+    padding:18px;
+    min-height:110px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    transition:.35s ease;
+}
+
+.benefits-bar div:hover{
+    transform:translateY(-6px);
+    border-color:rgba(215,255,63,.35);
+    background:rgba(255,255,255,.07);
+}
+
+.benefits-bar strong{
+    display:block;
+    color:var(--primary);
+    margin-bottom:8px;
+    font-size:1.05rem;
+    font-weight:900;
+}
+
+.benefits-bar span{
+    color:var(--gray);
+    font-size:.9rem;
+    line-height:1.45;
+}
