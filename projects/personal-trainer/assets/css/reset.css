@@ -25,3 +25,29 @@ img{
     display:block;
     max-width:100%;
 }
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+img,
+picture,
+video{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+img,
+picture,
+video{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
