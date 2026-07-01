@@ -1,30 +1,142 @@
 @media(max-width:950px){
-    .about-section{
-        grid-template-columns:1fr;
+    .navbar{
+        height:66px;
     }
 
-    .image-placeholder{
-        min-height:380px;
+    .menu,
+    .nav-cta{
+        display:none;
     }
 
-    .method-grid{
+    .hero{
+        min-height:auto;
         grid-template-columns:1fr;
+        padding:105px 0 52px;
+        gap:32px;
     }
 
-    .benefits-bar{
-        grid-template-columns:1fr;
-        transform:none;
-        margin-top:30px;
+    .hero-content{
+        max-width:100%;
     }
-}
-@media(max-width:950px){
+
+    .hero h1{
+        font-size:clamp(2rem,10vw,2.7rem);
+        line-height:1.08;
+    }
+
+    .hero p{
+        font-size:.98rem;
+    }
+
+    .hero-image{
+        display:none;
+    }
+
+    .hero-stats,
+    .benefits-bar,
+    .cards,
+    .method-grid,
+    .results-grid,
     .pricing-grid{
         grid-template-columns:1fr;
     }
 
+    .benefits-bar{
+        margin:24px auto 0;
+    }
+
+    .about-section{
+        grid-template-columns:1fr;
+        gap:34px;
+    }
+
+    .image-placeholder{
+        min-height:340px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .section{
+        padding:58px 0;
+    }
+
+    .target-option{
+        grid-template-columns:1fr;
+        gap:10px;
+        padding:22px;
+    }
+
+    .target-option span{
+        font-size:1.6rem;
+    }
+
     .cta-section{
         grid-template-columns:1fr;
-        padding:34px;
-        margin:56px auto;
+        padding:34px 24px;
+        margin:54px auto;
+    }
+
+    .cta-buttons{
+        width:100%;
+    }
+}
+
+@media(max-width:480px){
+    .navbar{
+        width:min(var(--container),90%);
+    }
+
+    .logo{
+        font-size:1.15rem;
+    }
+
+    .hero{
+        width:90%;
+        padding-top:96px;
+    }
+
+    .hero-label,
+    .section-label{
+        font-size:.7rem;
+        letter-spacing:1.4px;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .section h2,
+    .about-content h2,
+    .cta-section h2{
+        font-size:1.85rem;
+        line-height:1.15;
+    }
+
+    .hero-stats div,
+    .benefits-bar div,
+    .card,
+    .method-card,
+    .price-card,
+    .target-option{
+        padding:20px;
+    }
+
+    .result-card{
+        min-height:auto;
+        padding:22px;
+    }
+
+    .result-card:first-child{
+        min-height:auto;
+    }
+
+    .result-image{
+        aspect-ratio:16/10;
     }
 }
