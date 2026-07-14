@@ -53,12 +53,11 @@ body::before {
 .logo-mark {
   width: 54px;
   height: 34px;
-  background-image: url("../img/brand/jelleweb-jellyfish-sprite.png");
+  background-image: url("../img/brand/jelleweb-jellyfish-sprite-transparent.png");
   background-repeat: no-repeat;
   background-position: -13px -29px;
   background-size: 215px 143px;
   image-rendering: pixelated;
-  mix-blend-mode: screen;
   animation: jellyfish-swim 1.15s steps(1, end) infinite;
 }
 
