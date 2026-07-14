@@ -15,8 +15,9 @@ window.addEventListener("scroll", () => {
     }
 });
 const cursorGlow = document.querySelector(".cursor-glow");
+const hasFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-if(cursorGlow){
+if(cursorGlow && hasFinePointer){
     document.addEventListener("mousemove", (event) => {
         cursorGlow.style.left = `${event.clientX}px`;
         cursorGlow.style.top = `${event.clientY}px`;
@@ -24,7 +25,7 @@ if(cursorGlow){
 }
 const interactiveCards = document.querySelectorAll(".card, .project-card");
 
-interactiveCards.forEach((card) => {
+if(hasFinePointer) interactiveCards.forEach((card) => {
     card.addEventListener("mousemove", (event) => {
         const rect = card.getBoundingClientRect();
 
@@ -57,3 +58,32 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+if(menuToggle && navMenu){
+    const toggleMenu = (open) => {
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.querySelector(".sr-only").textContent = open ? "Fechar menu" : "Abrir menu";
+        navMenu.classList.toggle("is-open", open);
+    };
+
+    menuToggle.addEventListener("click", () => {
+        toggleMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    navMenu.addEventListener("click", (event) => {
+        if(event.target.closest("a")) toggleMenu(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true"){
+            toggleMenu(false);
+            menuToggle.focus();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if(window.innerWidth > 900) toggleMenu(false);
+    });
+}

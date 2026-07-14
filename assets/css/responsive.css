@@ -14,8 +14,38 @@
 }
 
 @media(max-width:900px){
+    .menu-toggle{
+        display:flex;
+    }
+
     .nav-menu{
-        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        padding:12px 24px 20px;
+        display:flex;
+        flex-direction:column;
+        gap:4px;
+        background:rgba(15,23,42,.98);
+        border-bottom:1px solid rgba(255,255,255,.1);
+        visibility:hidden;
+        opacity:0;
+        transform:translateY(-8px);
+        pointer-events:none;
+        transition:opacity .2s ease, transform .2s ease, visibility .2s;
+    }
+
+    .nav-menu.is-open{
+        visibility:visible;
+        opacity:1;
+        transform:none;
+        pointer-events:auto;
+    }
+
+    .nav-menu a{
+        display:block;
+        padding:12px 4px;
     }
 
     .navbar{

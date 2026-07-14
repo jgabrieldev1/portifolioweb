@@ -18,14 +18,23 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
   <div class="scroll-progress"></div>
   <div class="cursor-glow"></div>
 
   <header class="header">
-    <nav class="navbar">
-      <a href="#" class="logo">JGS<span>.</span></a>
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="#inicio" class="logo" aria-label="JGS — início">JGS<span>.</span></a>
 
-      <ul class="nav-menu">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Abrir menu</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#processo">Processo</a></li>
@@ -35,8 +44,8 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="conteudo">
+    <section class="hero" id="inicio">
       <div class="hero-content">
         <span class="tag reveal-item">Desenvolvedor Web</span>
 
