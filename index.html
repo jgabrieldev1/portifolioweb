@@ -76,10 +76,57 @@
       </div>
 
       <div class="hero-visual">
-        <div class="brand-showcase">
-          <img src="assets/img/brand/jelleweb-primary.png" alt="JelleWeb, representada por uma água-viva digital em tons de azul, violeta e magenta" width="1254" height="1254" fetchpriority="high">
-          <span class="brand-orbit orbit-one" aria-hidden="true"></span>
-          <span class="brand-orbit orbit-two" aria-hidden="true"></span>
+        <div class="project-carousel" role="group" aria-label="Prévia visual de projetos" tabindex="0">
+          <div class="project-carousel__viewport">
+            <div class="project-carousel__track">
+              <figure class="project-slide is-active" aria-hidden="false">
+                <img src="assets/img/projects/previews/personal-trainer.png" alt="Prévia de landing page para personal trainer com visual escuro e detalhes verdes" width="1024" height="1536" loading="eager">
+                <figcaption>
+                  <strong>Personal Trainer</strong>
+                  <span>Landing page de alta conversão</span>
+                </figcaption>
+              </figure>
+
+              <figure class="project-slide" aria-hidden="true">
+                <img src="assets/img/projects/previews/fotografo.png" alt="Prévia de portfólio para fotógrafo com ensaios e identidade visual elegante" width="1024" height="1536" loading="lazy">
+                <figcaption>
+                  <strong>Fotografia</strong>
+                  <span>Portfólio visual para fotógrafo</span>
+                </figcaption>
+              </figure>
+
+              <figure class="project-slide" aria-hidden="true">
+                <img src="assets/img/projects/previews/advocacia.png" alt="Prévia de site institucional jurídico em azul escuro e dourado" width="1024" height="1536" loading="lazy">
+                <figcaption>
+                  <strong>Advocacia</strong>
+                  <span>Site institucional jurídico</span>
+                </figcaption>
+              </figure>
+
+              <figure class="project-slide project-slide--jelleweb" aria-hidden="true">
+                <img src="assets/img/projects/previews/jelleweb.png" alt="Identidade visual JelleWeb com jellyfish em azul, violeta e magenta" width="1254" height="1254" loading="lazy">
+                <figcaption>
+                  <strong>JelleWeb</strong>
+                  <span>Identidade e presença digital</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <button class="project-carousel__button project-carousel__button--previous" type="button" aria-label="Mostrar projeto anterior">
+            <span aria-hidden="true">&#8592;</span>
+          </button>
+          <button class="project-carousel__button project-carousel__button--next" type="button" aria-label="Mostrar próximo projeto">
+            <span aria-hidden="true">&#8594;</span>
+          </button>
+
+          <div class="project-carousel__indicators" aria-hidden="true">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="sr-only" aria-live="polite" data-carousel-status>Slide 1 de 4: Personal Trainer</p>
         </div>
       </div>
     </section>
@@ -208,5 +255,6 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/animation.js"></script>
+  <script src="assets/js/project-carousel.js"></script>
 </body>
 </html>
