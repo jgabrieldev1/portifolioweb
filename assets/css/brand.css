@@ -90,6 +90,7 @@ body::before {
 .hero {
   min-height: 100vh;
   padding-top: 110px;
+  column-gap: clamp(32px, 5vw, 76px);
 }
 
 .hero::before {
@@ -113,9 +114,10 @@ body::before {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  max-width: 640px;
+  font-size: clamp(2.4rem, 4.4vw, 4.3rem);
   letter-spacing: -0.045em;
-  line-height: 1.04;
+  line-height: 1.07;
 }
 
 .hero h1 > span {
@@ -125,7 +127,8 @@ body::before {
 }
 
 .hero p {
-  max-width: 660px;
+  max-width: 620px;
+  margin-block:20px;
   font-size: clamp(1.05rem, 1.4vw, 1.2rem);
 }
 
@@ -141,50 +144,6 @@ body::before {
 .secondary {
   border-color: rgb(34 211 238 / 25%);
   background: rgb(255 255 255 / 3%);
-}
-
-.brand-showcase {
-  position: relative;
-  width: min(100%, 540px);
-  isolation: isolate;
-}
-
-.brand-showcase::before {
-  position: absolute;
-  z-index: -1;
-  inset: 12%;
-  border-radius: 50%;
-  background: conic-gradient(from 180deg, var(--brand-cyan), var(--brand-violet), var(--brand-pink), var(--brand-cyan));
-  content: "";
-  filter: blur(54px);
-  opacity: 0.22;
-}
-
-.brand-showcase img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 34px;
-  box-shadow: 0 40px 100px rgb(0 0 0 / 45%);
-}
-
-.brand-orbit {
-  position: absolute;
-  z-index: -1;
-  border: 1px solid rgb(34 211 238 / 20%);
-  border-radius: 50%;
-  animation: brand-pulse 5s ease-in-out infinite;
-}
-
-.orbit-one {
-  inset: -4%;
-}
-
-.orbit-two {
-  inset: -9%;
-  border-color: rgb(217 70 239 / 12%);
-  animation-delay: -2.5s;
 }
 
 .tech-stack span {
@@ -257,19 +216,6 @@ body::before {
   opacity: 0.72;
 }
 
-@keyframes brand-pulse {
-  0%,
-  100% {
-    opacity: 0.45;
-    transform: scale(0.98);
-  }
-
-  50% {
-    opacity: 0.8;
-    transform: scale(1.02);
-  }
-}
-
 @keyframes jellyfish-swim {
   0% {
     background-position: -13px -29px;
@@ -309,11 +255,6 @@ body::before {
     display: flex;
   }
 
-  .brand-showcase {
-    width: min(78vw, 380px);
-    margin-inline: auto;
-  }
-
   #contato {
     width: calc(100% - 32px);
   }
@@ -325,19 +266,12 @@ body::before {
   }
 
   .hero h1 {
-    font-size: clamp(2.35rem, 12vw, 3.35rem);
-  }
-
-  .brand-showcase {
-    width: min(82vw, 320px);
+    font-size:clamp(2rem,9.5vw,2.6rem);
+    line-height:1.1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brand-orbit {
-    animation: none;
-  }
-
   .logo-mark {
     animation: none;
   }
