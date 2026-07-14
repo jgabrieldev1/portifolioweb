@@ -6,6 +6,14 @@ O formato segue os principios de [Keep a Changelog](https://keepachangelog.com/p
 
 ## [Nao publicado]
 
+### Identidade
+
+- Substituida a marca JGS pela identidade JelleWeb na home.
+- Aplicados logotipo oficial, paleta azul-ciano-violeta-magenta e novo wordmark responsivo.
+- Adicionada jellyfish em pixel art animada e com fundo transparente no header, com alternativa estatica para movimento reduzido.
+- Revisados textos institucionais, proposta de valor, servicos e chamadas comerciais.
+- Adicionados hero e rodape alinhados ao posicionamento de estudio digital independente.
+
 ### Corrigido
 
 - Corrigida a estrutura invalida do documento HTML do projeto de advocacia.

@@ -1,65 +1,69 @@
-# JelleWeb - Portfolio Web
+# JelleWeb
 
-Portfolio estatico de Joao Gabriel Sales, usado para apresentar servicos de desenvolvimento web e demonstracoes de sites para diferentes segmentos.
+Portfólio oficial da JelleWeb, um estúdio digital independente que cria landing pages, sites institucionais e experiências sob medida para negócios em movimento.
 
-> Estado da auditoria: Fase 0 concluida em 13/07/2026. Nenhum arquivo de execucao foi alterado nesta fase.
+[Acessar o site publicado](https://jgabrieldev1.github.io/portifolioweb/)
 
-## Execucao atual
+## Estado do projeto
 
-O projeto nao possui etapa de build nem dependencias de pacote. Para preservar o comportamento de caminhos relativos, sirva a raiz com um servidor HTTP estatico, por exemplo:
+As fases de estabilização, identidade JelleWeb, acessibilidade e guardrails de qualidade estão concluídas. O projeto está preparado para iniciar a Fase 4: limpeza arquitetural e consolidação interna, sem alterar as URLs públicas.
+
+## Identidade
+
+- marca pública: JelleWeb;
+- direção visual: azul, ciano, violeta e magenta sobre superfícies escuras;
+- símbolo: jellyfish oficial e variante animada em pixel art;
+- posicionamento: estratégia, design e desenvolvimento para transformar presença digital em oportunidades de negócio.
+
+## Tecnologias
+
+- HTML5, CSS e JavaScript nativos;
+- Node.js 24 LTS para ferramentas de desenvolvimento;
+- HTML Validate, ESLint, Stylelint e Prettier;
+- Playwright para smoke tests e baselines visuais;
+- GitHub Actions e GitHub Pages.
+
+## Execução local
+
+Requisitos: Node.js 24 LTS e npm.
 
 ```powershell
-python -m http.server 8000
+npm ci
+npm run serve
 ```
 
-Depois, acesse `http://localhost:8000/`.
+O site estará disponível em `http://127.0.0.1:4173`.
 
-## Estrutura
+## Qualidade
+
+Para executar validação HTML, verificação de links, lint, formatação e testes desktop/mobile:
+
+```powershell
+npx playwright install chromium
+npm run check
+```
+
+O mesmo comando é executado automaticamente nos pull requests e em atualizações da branch `main`.
+
+## Estrutura publicada
 
 ```text
 .
-|-- index.html                 # Portfolio principal (implementado)
-|-- assets/                    # CSS, JavaScript e imagens do portfolio
-|-- projects/                  # Demonstracoes independentes por segmento
-|   |-- advocacia/             # Implementado, com problemas de HTML conhecidos
-|   |-- personal-trainer/      # Implementado parcialmente
-|   |-- imobiliaria/           # Reservado; arquivos vazios
-|   `-- odontologia/           # Reservado; arquivos vazios
-|-- pages/                     # Reservado; arquivos vazios
-|-- components/                # Reservado; arquivos vazios
-|-- templates/                 # Reservado; arquivos vazios
-`-- docs/                      # Diagnostico e planejamento tecnico
+|-- index.html                 # Home JelleWeb
+|-- assets/                    # Identidade, estilos, scripts e imagens
+|-- projects/                  # Demonstrações independentes por segmento
+|-- tests/                     # Smoke tests e baselines visuais
+|-- scripts/                   # Verificações locais
+|-- docs/                      # Roadmap e instruções de deploy
+`-- .github/workflows/         # Integração contínua
 ```
 
-Dos 71 arquivos HTML, CSS e JavaScript auditados, 36 estao vazios. A existencia de uma pasta nao significa que o recurso esteja funcional.
+## Segurança e privacidade
 
-## Documentacao
+O repositório não deve armazenar senhas, tokens, chaves de API, dados privados de clientes ou arquivos de ambiente. Contatos presentes nas páginas são canais comerciais públicos e fazem parte dos fluxos de conversão do site.
 
-- [`CONTEXT.md`](CONTEXT.md): contexto operacional, escopo e restricoes.
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): arquitetura atual, pontos fortes, fragilidades e arquitetura proposta.
-- [`docs/REFACTORING-PLAN.md`](docs/REFACTORING-PLAN.md): plano incremental sujeito a aprovacao.
-- [`CHANGELOG.md`](CHANGELOG.md): historico documentado a partir da Fase 0.
-- [`docs/planejamento.md`](docs/planejamento.md): arquivo legado vazio, preservado nesta fase.
+Novas integrações que precisem de credenciais devem usar os secrets do GitHub ou variáveis de ambiente locais não versionadas.
 
-## Estado funcional
+## Deploy
 
-| Area | Estado | Observacao |
-|---|---|---|
-| Portfolio principal | Funcional com ressalvas | Site one-page; sem menu movel, testes ou metadados completos |
-| Advocacia | Funcional com ressalvas | Estrutura HTML corrigida; imagens ainda sao placeholders |
-| Personal trainer | Parcial | CTAs funcionais; imagens e resultados ainda sao placeholders |
-| Odontologia | Em desenvolvimento | Rota publica valida informa o status e oferece contato |
-| Imobiliaria | Em desenvolvimento | Rota publica valida informa o status e oferece contato |
-| Pages, components e templates | Nao implementados | Apenas estrutura de diretorios e arquivos vazios |
-
-## Regras para evolucao
-
-1. Preservar a publicacao estatica e os URLs atuais durante a refatoracao.
-2. Corrigir primeiro falhas funcionais e de acessibilidade, antes de adotar ferramentas.
-3. Nao promover arquivos vazios a abstracoes sem um caso real de uso.
-4. Validar cada etapa antes de remover ou consolidar codigo.
-5. Exigir aprovacao antes de mudancas estruturais de grande alcance.
-
-## Auditoria
-
-O diagnostico completo esta em [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). As mudancas propostas nao foram executadas; consulte [`docs/REFACTORING-PLAN.md`](docs/REFACTORING-PLAN.md).
+O GitHub Pages publica automaticamente a raiz da branch `main`. O procedimento está documentado em [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).

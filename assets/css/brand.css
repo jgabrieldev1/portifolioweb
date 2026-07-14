@@ -1,0 +1,344 @@
+:root {
+  --primary: #216cff;
+  --secondary: #22d3ee;
+  --accent: #d946ef;
+  --background: #030712;
+  --background-light: #11142a;
+  --white: #f8fbff;
+  --gray: #b8c2d8;
+  --dark: #01030a;
+  --brand-violet: #7447ff;
+  --brand-pink: #f04ed6;
+  --brand-cyan: #16d9ff;
+  --brand-gradient: linear-gradient(110deg, var(--brand-cyan), var(--brand-violet) 52%, var(--brand-pink));
+  --radius: 22px;
+}
+
+body {
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 78% 8%, rgb(116 71 255 / 14%), transparent 30rem),
+    radial-gradient(circle at 8% 48%, rgb(22 217 255 / 8%), transparent 28rem),
+    var(--background);
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-image: linear-gradient(rgb(255 255 255 / 2%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 2%) 1px, transparent 1px);
+  background-size: 64px 64px;
+  content: "";
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.header {
+  background: rgb(3 7 18 / 74%);
+  border-color: rgb(34 211 238 / 10%);
+}
+
+.header.scrolled {
+  background: rgb(3 7 18 / 94%);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 32%);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: inherit;
+}
+
+.logo-mark {
+  width: 54px;
+  height: 34px;
+  background-image: url("../img/brand/jelleweb-jellyfish-sprite-transparent.png");
+  background-repeat: no-repeat;
+  background-position: -13px -29px;
+  background-size: 215px 143px;
+  image-rendering: pixelated;
+  animation: jellyfish-swim 1.15s steps(1, end) infinite;
+}
+
+.logo-name,
+.footer-brand {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.logo-name > span,
+.footer-brand > span {
+  background: var(--brand-gradient);
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active,
+.section-label {
+  color: var(--brand-cyan);
+}
+
+.nav-menu a::after {
+  background: var(--brand-gradient);
+}
+
+.hero {
+  min-height: 100vh;
+  padding-top: 110px;
+}
+
+.hero::before {
+  top: 4%;
+  right: -4%;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(circle, rgb(116 71 255 / 28%), transparent 67%);
+}
+
+.hero::after {
+  background: radial-gradient(circle, rgb(22 217 255 / 15%), transparent 68%);
+}
+
+.tag {
+  color: var(--brand-cyan);
+  background: rgb(22 217 255 / 7%);
+  border-color: rgb(22 217 255 / 24%);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+}
+
+.hero h1 > span {
+  background: var(--brand-gradient);
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 660px;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+}
+
+.primary {
+  background: linear-gradient(110deg, #1677ff, #7047ff 58%, #c43de0);
+  box-shadow: 0 12px 36px rgb(71 85 255 / 24%);
+}
+
+.primary:hover {
+  box-shadow: 0 16px 44px rgb(116 71 255 / 42%);
+}
+
+.secondary {
+  border-color: rgb(34 211 238 / 25%);
+  background: rgb(255 255 255 / 3%);
+}
+
+.brand-showcase {
+  position: relative;
+  width: min(100%, 540px);
+  isolation: isolate;
+}
+
+.brand-showcase::before {
+  position: absolute;
+  z-index: -1;
+  inset: 12%;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, var(--brand-cyan), var(--brand-violet), var(--brand-pink), var(--brand-cyan));
+  content: "";
+  filter: blur(54px);
+  opacity: 0.22;
+}
+
+.brand-showcase img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 34px;
+  box-shadow: 0 40px 100px rgb(0 0 0 / 45%);
+}
+
+.brand-orbit {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgb(34 211 238 / 20%);
+  border-radius: 50%;
+  animation: brand-pulse 5s ease-in-out infinite;
+}
+
+.orbit-one {
+  inset: -4%;
+}
+
+.orbit-two {
+  inset: -9%;
+  border-color: rgb(217 70 239 / 12%);
+  animation-delay: -2.5s;
+}
+
+.tech-stack span {
+  background: rgb(255 255 255 / 4%);
+  border-color: rgb(116 71 255 / 18%);
+}
+
+.tech-stack span:hover {
+  color: var(--brand-cyan);
+  border-color: rgb(34 211 238 / 38%);
+}
+
+.section {
+  position: relative;
+}
+
+.section-label {
+  font-weight: 750;
+}
+
+.section h2 {
+  max-width: 880px;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.card,
+.project-card,
+.process-card {
+  border-color: rgb(116 71 255 / 16%);
+  background: linear-gradient(145deg, rgb(255 255 255 / 6%), rgb(116 71 255 / 3%));
+}
+
+.card:hover,
+.project-card:hover,
+.process-card:hover {
+  border-color: rgb(34 211 238 / 32%);
+  box-shadow: 0 24px 64px rgb(0 0 0 / 28%);
+}
+
+.project-card > span,
+.process-card > span,
+.project-card a {
+  color: var(--brand-cyan);
+}
+
+#contato {
+  margin-bottom: 90px;
+  border: 1px solid rgb(116 71 255 / 18%);
+  border-radius: 34px;
+  background: radial-gradient(circle at 92% 12%, rgb(217 70 239 / 13%), transparent 25rem),
+    linear-gradient(135deg, rgb(33 108 255 / 8%), rgb(116 71 255 / 5%));
+}
+
+.brand-footer {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 50px 24px;
+  border-top: 1px solid rgb(34 211 238 / 10%);
+  color: var(--gray);
+  text-align: center;
+}
+
+.brand-footer p {
+  margin: 0;
+}
+
+.brand-footer small {
+  opacity: 0.72;
+}
+
+@keyframes brand-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes jellyfish-swim {
+  0% {
+    background-position: -13px -29px;
+  }
+
+  12.5% {
+    background-position: -63px -29px;
+  }
+
+  25% {
+    background-position: -112px -29px;
+  }
+
+  37.5% {
+    background-position: -161px -29px;
+  }
+
+  50% {
+    background-position: -12px -80px;
+  }
+
+  62.5% {
+    background-position: -61px -80px;
+  }
+
+  75% {
+    background-position: -110px -80px;
+  }
+
+  87.5% {
+    background-position: -159px -80px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-visual {
+    display: flex;
+  }
+
+  .brand-showcase {
+    width: min(78vw, 380px);
+    margin-inline: auto;
+  }
+
+  #contato {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 520px) {
+  .logo-name {
+    font-size: 1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 12vw, 3.35rem);
+  }
+
+  .brand-showcase {
+    width: min(82vw, 320px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-orbit {
+    animation: none;
+  }
+
+  .logo-mark {
+    animation: none;
+  }
+}
