@@ -1,0 +1,8 @@
+{
+  "ignoreFiles": ["node_modules/**", "playwright-report/**", "test-results/**"],
+  "rules": {
+    "declaration-block-no-duplicate-properties": true,
+    "property-no-unknown": true,
+    "selector-type-no-unknown": true
+  }
+}

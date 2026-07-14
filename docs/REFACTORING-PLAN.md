@@ -52,6 +52,8 @@
 
 **Objetivo:** detectar regressao antes da publicacao.
 
+**Status:** em andamento desde 14/07/2026. Node.js 24 LTS foi escolhido como runtime unico; validacao HTML e de links, lint de CSS/JavaScript, formatacao da automacao, smoke tests desktop/mobile, baselines visuais e CI foram adicionados. A protecao obrigatoria de `main` deve ser ativada apos o primeiro workflow verde.
+
 1. Escolher um runtime de desenvolvimento apenas se aprovado.
 2. Adicionar validacao HTML e verificador de links internos.
 3. Adicionar formatacao/lint para CSS e JavaScript.
