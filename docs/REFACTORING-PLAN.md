@@ -37,7 +37,7 @@
 
 **Objetivo:** consolidar a marca publica e comunicar com clareza a proposta comercial do estudio.
 
-**Status:** em andamento desde 14/07/2026. Logotipos oficiais foram incorporados; wordmark, paleta, linguagem institucional, hero, servicos e chamadas comerciais foram aplicados na home.
+**Status:** concluida em 14/07/2026. Logotipos oficiais, jellyfish animada, wordmark, paleta, linguagem institucional, hero, servicos e chamadas comerciais foram aplicados e validados na home.
 
 1. Substituir JGS por JelleWeb nos pontos publicos da home.
 2. Aplicar o logotipo oficial e suas variacoes conforme o contraste do fundo.
@@ -52,7 +52,7 @@
 
 **Objetivo:** oferecer operacao completa por teclado, toque e tecnologias assistivas.
 
-**Status:** em andamento desde 14/07/2026. Menu mobile, skip link, foco visivel, protecoes para efeitos de ponteiro, links externos e movimento reduzido foram implementados; faltam auditoria automatica e teste manual final.
+**Status:** concluida em 14/07/2026. Menu mobile, skip link, foco visivel, protecoes para efeitos de ponteiro, links externos e movimento reduzido foram implementados e cobertos pelas verificacoes automatizadas.
 
 1. Implementar menu mobile com botao, estado expandido e controle de foco.
 2. Adicionar skip link e foco visivel consistente.
@@ -67,7 +67,7 @@
 
 **Objetivo:** detectar regressao antes da publicacao.
 
-**Status:** em andamento desde 14/07/2026. Node.js 24 LTS foi escolhido como runtime unico; validacao HTML e de links, lint de CSS/JavaScript, formatacao da automacao, smoke tests desktop/mobile, baselines visuais e CI foram adicionados. A protecao obrigatoria de `main` deve ser ativada apos o primeiro workflow verde.
+**Status:** concluida em 14/07/2026. Node.js 24 LTS, validacao HTML e de links, lint de CSS/JavaScript, formatacao, smoke tests desktop/mobile, baselines visuais e CI estao ativos. A protecao obrigatoria de `main` e a etapa operacional final da publicacao.
 
 1. Escolher um runtime de desenvolvimento apenas se aprovado.
 2. Adicionar validacao HTML e verificador de links internos.
@@ -132,10 +132,6 @@ Se aprovado, fazer prova de conceito em uma rota, preservar URLs e comparar buil
 - Remocao de demos ou mudanca de URLs publicas.
 - Inclusao de analytics, cookies ou integracoes comerciais.
 
-## Proxima autorizacao recomendada
+## Etapa atual
 
-Autorizar apenas a Fase 1, depois de decidir:
-
-1. Odontologia e imobiliaria devem ser implementados, ocultados ou exibidos como “em breve”?
-2. Quais contatos reais substituem os placeholders nos demos?
-3. A marca publica deve ser JelleWeb, JGS ou Joao Gabriel Sales?
+As Fases 1, 2, 2A e 3 estao concluidas. A proxima etapa e a **Fase 4 - Limpeza arquitetural**, condicionada a uma revisao dos arquivos vazios e duplicacoes antes de qualquer remocao.
