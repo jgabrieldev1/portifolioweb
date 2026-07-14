@@ -6,6 +6,15 @@ O formato segue os principios de [Keep a Changelog](https://keepachangelog.com/p
 
 ## [Nao publicado]
 
+### Corrigido
+
+- Corrigida a estrutura invalida do documento HTML do projeto de advocacia.
+- Substituidos links de contato placeholder por fluxos funcionais ligados ao portfolio.
+- Adicionadas paginas validas de projeto em desenvolvimento para odontologia e imobiliaria.
+- Protegido o JavaScript da home contra elementos ausentes e paginas sem area rolavel.
+- Mantido o conteudo visivel quando `IntersectionObserver` nao esta disponivel.
+- Adicionado `rel="noopener noreferrer"` aos novos links externos em outra aba.
+
 ### Documentacao
 
 - Documentada a arquitetura atual e a arquitetura alvo.

@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  if(!("IntersectionObserver" in window)){
+    return;
+  }
+
   const revealItems = document.querySelectorAll(
     ".hero-label, .hero h1, .hero p, .buttons, .hero-stats, .hero-image, .label, .section h2, .section p, .card, .contact .btn"
   );

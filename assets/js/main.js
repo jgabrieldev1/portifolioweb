@@ -4,22 +4,24 @@ const header = document.querySelector(".header");
 window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY;
     const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / pageHeight) * 100;
+    const progress = pageHeight > 0 ? (scrollTop / pageHeight) * 100 : 0;
 
-    progressBar.style.width = `${progress}%`;
+    if(progressBar){
+        progressBar.style.width = `${progress}%`;
+    }
 
-    if(scrollTop > 40){
-        header.classList.add("scrolled");
-    }else{
-        header.classList.remove("scrolled");
+    if(header){
+        header.classList.toggle("scrolled", scrollTop > 40);
     }
 });
 const cursorGlow = document.querySelector(".cursor-glow");
 
-document.addEventListener("mousemove", (event) => {
-    cursorGlow.style.left = `${event.clientX}px`;
-    cursorGlow.style.top = `${event.clientY}px`;
-});
+if(cursorGlow){
+    document.addEventListener("mousemove", (event) => {
+        cursorGlow.style.left = `${event.clientX}px`;
+        cursorGlow.style.top = `${event.clientY}px`;
+    });
+}
 const interactiveCards = document.querySelectorAll(".card, .project-card");
 
 interactiveCards.forEach((card) => {

@@ -22,6 +22,8 @@
 
 **Objetivo:** eliminar defeitos publicos sem reorganizar a arquitetura.
 
+**Status:** concluida em 13/07/2026. Odontologia e imobiliaria mantiveram seus URLs com paginas de status; contatos usam o canal confirmado do portfolio.
+
 1. Validar manualmente todas as rotas e ancoras publicadas.
 2. Corrigir a ordem estrutural do HTML de advocacia.
 3. Definir o destino dos cards de odontologia e imobiliaria: implementar, ocultar ou marcar como indisponivel sem link.

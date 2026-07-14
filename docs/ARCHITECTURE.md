@@ -6,6 +6,8 @@ O repositorio e um conjunto de sites estaticos independentes, nao uma aplicacao 
 
 O principal risco atual e de integridade do produto: a home anuncia projetos vazios; o HTML de advocacia e invalido; CTAs e imagens de demos permanecem como placeholders; nao existem validacoes automatizadas. A recomendacao e estabilizar o site estatico antes de introduzir gerador de paginas, bundler ou framework.
 
+> Atualizacao de 13/07/2026: a Fase 1 corrigiu o HTML de advocacia, substituiu CTAs falsos, tornou odontologia e imobiliaria rotas validas de projeto em desenvolvimento e adicionou tolerancia a falhas nos scripts de reveal. Os demais achados permanecem como backlog das fases seguintes.
+
 ## Metodo e inventario
 
 A auditoria cobriu todos os arquivos rastreados relevantes, referencias de recursos, seletores JavaScript e historico recente. O repositorio tem 96 arquivos rastreados. Entre 71 arquivos HTML, CSS e JavaScript, 36 estao vazios e 35 possuem conteudo.

@@ -2,7 +2,7 @@
    SCROLL REVEAL
 ======================================================= */
 
-.reveal-item{
+.reveal-ready .reveal-item{
 
     opacity:0;
 
@@ -21,7 +21,7 @@
 
 /* Quando entra na tela */
 
-.reveal-item.active{
+.reveal-ready .reveal-item.active{
 
     opacity:1;
 
@@ -67,7 +67,7 @@
 
 @media (prefers-reduced-motion: reduce){
 
-    .reveal-item{
+    .reveal-ready .reveal-item{
 
         opacity:1;
 

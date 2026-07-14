@@ -1,28 +1,18 @@
 const revealItems = document.querySelectorAll(".reveal-item");
 
-const revealObserver = new IntersectionObserver((entries)=>{
+if("IntersectionObserver" in window){
+    document.documentElement.classList.add("reveal-ready");
 
-    entries.forEach((entry)=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("active");
-
-        }else{
-
-            entry.target.classList.remove("active");
-
-        }
-
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.toggle("active", entry.isIntersecting);
+        });
+    },{
+        threshold:0.10,
+        rootMargin:"0px 0px -5% 0px"
     });
 
-},{
-    threshold:0.10,
-    rootMargin:"0px 0px -5% 0px"
-});
-
-revealItems.forEach((item)=>{
-
-    revealObserver.observe(item);
-
-});
+    revealItems.forEach((item) => {
+        revealObserver.observe(item);
+    });
+}

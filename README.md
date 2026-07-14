@@ -46,10 +46,10 @@ Dos 71 arquivos HTML, CSS e JavaScript auditados, 36 estao vazios. A existencia 
 | Area | Estado | Observacao |
 |---|---|---|
 | Portfolio principal | Funcional com ressalvas | Site one-page; sem menu movel, testes ou metadados completos |
-| Advocacia | Parcial | Conteudo e estilos existem; documento HTML esta estruturalmente invalido |
-| Personal trainer | Parcial | Conteudo amplo; CTAs finais e imagens sao placeholders |
-| Odontologia | Nao implementado | Card da home aponta para pagina vazia |
-| Imobiliaria | Nao implementado | Card da home aponta para pagina vazia |
+| Advocacia | Funcional com ressalvas | Estrutura HTML corrigida; imagens ainda sao placeholders |
+| Personal trainer | Parcial | CTAs funcionais; imagens e resultados ainda sao placeholders |
+| Odontologia | Em desenvolvimento | Rota publica valida informa o status e oferece contato |
+| Imobiliaria | Em desenvolvimento | Rota publica valida informa o status e oferece contato |
 | Pages, components e templates | Nao implementados | Apenas estrutura de diretorios e arquivos vazios |
 
 ## Regras para evolucao
