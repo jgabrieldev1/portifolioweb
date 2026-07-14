@@ -37,6 +37,8 @@
 
 **Objetivo:** oferecer operacao completa por teclado, toque e tecnologias assistivas.
 
+**Status:** em andamento desde 14/07/2026. Menu mobile, skip link, foco visivel, protecoes para efeitos de ponteiro, links externos e movimento reduzido foram implementados; faltam auditoria automatica e teste manual final.
+
 1. Implementar menu mobile com botao, estado expandido e controle de foco.
 2. Adicionar skip link e foco visivel consistente.
 3. Revisar hierarquia de titulos, nomes acessiveis e contraste.

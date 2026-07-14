@@ -8,11 +8,17 @@
 </head>
 <body>
 
-  <header class="header">
-    <nav class="navbar">
-      <a href="#" class="logo">Almeida & Rocha</a>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-      <ul class="menu">
+  <header class="header">
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="#inicio" class="logo">Almeida & Rocha</a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="sr-only">Abrir menu</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+
+      <ul class="menu" id="menu-principal">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#areas">Áreas de atuação</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -20,8 +26,8 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="conteudo">
+    <section class="hero" id="inicio">
   <div class="hero-content">
     <span class="hero-label">Advocacia consultiva e estratégica</span>
 

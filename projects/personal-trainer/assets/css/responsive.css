@@ -1,8 +1,9 @@
 @media(max-width:950px){
-    .menu,
-    .nav-cta{
-        display:none;
-    }
+    .nav-cta{display:none}
+    .menu-toggle{display:flex}
+    .menu{position:absolute;top:100%;left:0;width:100%;padding:12px 5% 20px;display:flex;flex-direction:column;gap:4px;background:rgba(8,10,12,.98);border-bottom:1px solid rgba(255,255,255,.1);visibility:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s}
+    .menu.is-open{visibility:visible;opacity:1;transform:none;pointer-events:auto}
+    .menu a{display:block;padding:12px 4px}
 
     .navbar{
         height:64px;

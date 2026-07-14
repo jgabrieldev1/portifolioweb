@@ -14,6 +14,10 @@ O formato segue os principios de [Keep a Changelog](https://keepachangelog.com/p
 - Protegido o JavaScript da home contra elementos ausentes e paginas sem area rolavel.
 - Mantido o conteudo visivel quando `IntersectionObserver` nao esta disponivel.
 - Adicionado `rel="noopener noreferrer"` aos novos links externos em outra aba.
+- Implementados menus mobile acessiveis na home e nos projetos de advocacia e personal trainer, com estado expandido e fechamento por `Esc`.
+- Adicionados links para pular ao conteudo e foco visivel consistente nas paginas completas.
+- Limitados os efeitos de ponteiro da home a dispositivos com mouse ou apontador preciso.
+- Aplicado suporte a movimento reduzido na home e nas demonstracoes publicadas.
 
 ### Documentacao
 
