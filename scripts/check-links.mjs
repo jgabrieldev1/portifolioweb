@@ -20,7 +20,8 @@ for (const file of htmlFiles) {
   for (const reference of references) {
     if (/^(?:https?:|mailto:|tel:|data:|javascript:)/i.test(reference)) continue;
 
-    const [pathname, fragment] = reference.split("#", 2);
+    const [pathWithQuery, fragment] = reference.split("#", 2);
+    const pathname = pathWithQuery.split("?", 1)[0];
     const targetFile = pathname ? resolve(dirname(absoluteFile), decodeURIComponent(pathname)) : absoluteFile;
 
     try {
