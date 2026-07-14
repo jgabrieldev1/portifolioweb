@@ -33,7 +33,22 @@
 
 **Aceite:** nenhuma rota publica vazia, HTML valido, CTAs reais, console sem erros e navegacao principal preservada.
 
-## Fase 2 - Acessibilidade e navegacao
+## Fase 2 - Identidade JelleWeb
+
+**Objetivo:** consolidar a marca publica e comunicar com clareza a proposta comercial do estudio.
+
+**Status:** em andamento desde 14/07/2026. Logotipos oficiais foram incorporados; wordmark, paleta, linguagem institucional, hero, servicos e chamadas comerciais foram aplicados na home.
+
+1. Substituir JGS por JelleWeb nos pontos publicos da home.
+2. Aplicar o logotipo oficial e suas variacoes conforme o contraste do fundo.
+3. Extrair e centralizar a paleta azul, ciano, violeta e magenta da marca.
+4. Definir tipografia e hierarquia visual coerentes com a identidade digital.
+5. Revisar textos institucionais, proposta de valor, servicos e CTAs.
+6. Preservar as identidades independentes das demonstracoes de clientes.
+
+**Aceite:** marca JelleWeb consistente em desktop e mobile, textos comerciais claros, contraste acessivel e demos preservadas.
+
+## Fase 2A - Acessibilidade e navegacao
 
 **Objetivo:** oferecer operacao completa por teclado, toque e tecnologias assistivas.
 
