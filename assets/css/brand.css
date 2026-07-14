@@ -51,14 +51,15 @@ body::before {
 }
 
 .logo-mark {
-  width: 42px;
-  height: 30px;
-  background-image: url("../img/brand/jelleweb-primary.png");
+  width: 54px;
+  height: 34px;
+  background-image: url("../img/brand/jelleweb-jellyfish-sprite.png");
   background-repeat: no-repeat;
-  background-position: 54% 29%;
-  background-size: 78px 78px;
-  filter: drop-shadow(0 0 7px rgb(34 211 238 / 48%));
+  background-position: -13px -29px;
+  background-size: 215px 143px;
+  image-rendering: pixelated;
   mix-blend-mode: screen;
+  animation: jellyfish-swim 1.15s steps(1, end) infinite;
 }
 
 .logo-name,
@@ -270,6 +271,40 @@ body::before {
   }
 }
 
+@keyframes jellyfish-swim {
+  0% {
+    background-position: -13px -29px;
+  }
+
+  12.5% {
+    background-position: -63px -29px;
+  }
+
+  25% {
+    background-position: -112px -29px;
+  }
+
+  37.5% {
+    background-position: -161px -29px;
+  }
+
+  50% {
+    background-position: -12px -80px;
+  }
+
+  62.5% {
+    background-position: -61px -80px;
+  }
+
+  75% {
+    background-position: -110px -80px;
+  }
+
+  87.5% {
+    background-position: -159px -80px;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-visual {
     display: flex;
@@ -290,12 +325,6 @@ body::before {
     font-size: 1rem;
   }
 
-  .logo-mark {
-    width: 38px;
-    height: 27px;
-    background-size: 70px 70px;
-  }
-
   .hero h1 {
     font-size: clamp(2.35rem, 12vw, 3.35rem);
   }
@@ -307,6 +336,10 @@ body::before {
 
 @media (prefers-reduced-motion: reduce) {
   .brand-orbit {
+    animation: none;
+  }
+
+  .logo-mark {
     animation: none;
   }
 }
