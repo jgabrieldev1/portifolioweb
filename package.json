@@ -1,0 +1,30 @@
+{
+  "name": "portifolioweb",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio estatico com verificacoes automatizadas de qualidade.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "serve": "http-server . -p 4173 -c-1",
+    "check:html": "html-validate index.html \"projects/**/*.html\"",
+    "check:links": "node scripts/check-links.mjs",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:js": "eslint \"**/*.js\"",
+    "format:check": "prettier --check package.json eslint.config.js playwright.config.js scripts tests .github",
+    "test:smoke": "playwright test",
+    "test:update-snapshots": "playwright test --update-snapshots",
+    "check": "npm run check:html && npm run check:links && npm run lint:css && npm run lint:js && npm run format:check && npm run test:smoke"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0",
+    "html-validate": "^11.5.6",
+    "http-server": "^14.1.1",
+    "prettier": "^3.9.5",
+    "stylelint": "^17.14.0"
+  }
+}
