@@ -1,11 +1,12 @@
 ﻿/* oxlint-disable next/no-img-element -- Static Vite entry uses local images with explicit dimensions. */
 'use client';
-import { useEffect, type CSSProperties } from 'react';
+import { useEffect } from 'react';
 import { ArrowDown, ArrowUpRight, Mail, MessageCircle } from 'lucide-react';
 import { installReferenceReveals } from '../lib/reveals';
 import TiposStage from './tipos-stage';
 import Clock from './clock';
 import Age from './age';
+import ScrollVideo from './scroll-video';
 
 const WHATSAPP =
   'https://wa.me/5565981186509?text=Oi%2C%20gostei%20do%20seu%20trabalho%20e%20gostaria%20de%20conhecer%20melhor.';
@@ -22,27 +23,21 @@ type Project = {
 };
 
 const featured = {
-  title: 'ToggleMaster',
-  kind: 'Tech Challenge · FIAP DevOps e Arquitetura Cloud',
+  title: 'Lusco Audiovisual',
+  kind: 'Landing page · produtora audiovisual',
   summary:
-    'Plataforma de feature flags com cinco microsserviços — auth, flag, targeting, evaluation e analytics — com infraestrutura e entrega automatizadas de ponta a ponta.',
-  pipeline: ['pull request', 'testes + lint', 'SAST + SCA', 'build + scan', 'ECR', 'GitOps', 'ArgoCD', 'EKS'],
-  stack: ['Go', 'Python', 'Terraform', 'GitHub Actions', 'ArgoCD', 'Amazon EKS', 'Docker'],
-  repo: `${GITHUB}/tech-challenge-03`,
+    'O filme do set fica preso atrás da página: uma folha rosada com furos revela o vídeo conforme a rolagem. Intro em coluna de quadros, logo que se encolhe até o menu e rolagem suave.',
+  highlights: [
+    ['Vídeo atrás da página', 'a folha com furos funciona como máscara sobre o filme em tela cheia'],
+    ['Intro em quadros', 'coluna de fotogramas que abre a página antes do logo'],
+    ['Rolagem suave', 'Lenis controla o ritmo e as entradas de cada seção'],
+  ],
+  stack: ['Vite', 'JavaScript', 'CSS', 'Lenis', 'GitHub Pages'],
 };
 
 const projects: Project[] = [
   {
     id: '02',
-    title: 'Pavonia Audiovisual',
-    kind: 'Landing page experimental',
-    summary: 'O filme do set preso atrás da página: uma folha com furos que revela o vídeo, intro em coluna de quadros e logo animado.',
-    stack: ['Vite', 'JavaScript', 'Lenis', 'GitHub Pages'],
-    repo: `${GITHUB}/pavonia-portfolio`,
-    live: 'https://jgabrieldev1.github.io/pavonia-portfolio/',
-  },
-  {
-    id: '03',
     title: 'JelleWeb',
     kind: 'Estúdio digital',
     summary: 'Vitrine de landing pages e sites institucionais por segmento, com validação de HTML, lint e testes visuais no CI.',
@@ -51,7 +46,7 @@ const projects: Project[] = [
     live: 'https://jgabrieldev1.github.io/portifolioweb/',
   },
   {
-    id: '04',
+    id: '03',
     title: 'API Gestão Escolar',
     kind: 'Imersão DevOps · Alura + Google Cloud',
     summary: 'API para alunos, cursos e matrículas, com documentação interativa e ambiente containerizado do dev à produção.',
@@ -59,7 +54,7 @@ const projects: Project[] = [
     repo: `${GITHUB}/api-gestao-escolar`,
   },
   {
-    id: '05',
+    id: '04',
     title: 'Este portfólio',
     kind: 'v1 RPG em pixel art → v2 terminal',
     summary: 'A primeira versão era um jogo; esta escreve fumaça em caracteres 5×7 desenhados direto num shader WebGL2.',
@@ -192,35 +187,35 @@ export default function Home() {
           <div className="wrap">
             <div className="section-heading" data-reveal="rise">
               <p className="label"><b>01</b> projetos</p>
-              <h2 id="projects-title">Do pipeline<br />ao <em>pixel.</em></h2>
-              <p className="section-intro">Infraestrutura automatizada, interfaces experimentais e APIs. Tudo com código aberto no GitHub.</p>
+              <h2 id="projects-title">Ideias que<br />viram <em>código.</em></h2>
+              <p className="section-intro">Landing pages com movimento, sites, APIs e experimentos visuais — do layout ao deploy.</p>
             </div>
 
             <article className="featured" data-reveal="rise">
               <div className="featured-head">
                 <span className="window-dots" aria-hidden="true"><i /><i /><i /></span>
-                <span className="featured-path">~/projetos/01-togglemaster</span>
+                <span className="featured-path">~/projetos/01-lusco</span>
                 <span className="featured-tag">destaque</span>
               </div>
               <div className="featured-body">
-                <div>
+                <ScrollVideo
+                  src="/projects/lusco-scroll.webm"
+                  poster="/projects/lusco-poster.jpg"
+                  label="Gravação da landing page Lusco Audiovisual rolando do topo ao rodapé: logo rosa com flor de hibisco sobre cena de filmagem, filmes recentes, etapas de produção e contato."
+                />
+                <div className="featured-info">
                   <p className="project-kind">{featured.kind}</p>
                   <h3>{featured.title}</h3>
                   <p className="project-summary">{featured.summary}</p>
+                  <ul className="highlights">
+                    {featured.highlights.map(([title, text]) => (
+                      <li key={title}><strong>{title}</strong><span>{text}</span></li>
+                    ))}
+                  </ul>
                   <ul className="chips" aria-label="Tecnologias">
                     {featured.stack.map(item => <li key={item}>{item}</li>)}
                   </ul>
-                  <ProjectLinks repo={featured.repo} />
                 </div>
-                <ol className="pipeline" aria-label="Pipeline de entrega">
-                  {featured.pipeline.map((step, index) => (
-                    <li key={step} style={{ '--i': index } as CSSProperties}>
-                      <span className="pipeline-index">{String(index + 1).padStart(2, '0')}</span>
-                      <span className="pipeline-step">{step}</span>
-                      <span className="pipeline-ok" aria-hidden="true">ok</span>
-                    </li>
-                  ))}
-                </ol>
               </div>
             </article>
 
